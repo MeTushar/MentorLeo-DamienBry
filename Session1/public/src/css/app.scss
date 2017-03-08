@@ -1,0 +1,128 @@
+/* Variables */
+$backgroundColor: #252628;
+$linkcolor: #252627;
+$textColor: #E8AA14;
+$borderColor: #eee;
+$white: #fff;
+$black: #000;
+$skillColor: #6EEB83;
+$jobListColor: #E8AA14;
+$jobTitle: #6EEB83;
+
+/* Mixins */
+@mixin margin($mtop, $mright, $mbottom, $mleft) {
+	margin: $mtop $mright $mbottom $mleft;
+}
+
+@mixin padding($ptop, $pright, $pbottom, $pleft) {
+	padding: $ptop $pright $pbottom $pleft;
+}
+
+
+body {
+	background: $backgroundColor;
+	@include margin(0, 0, 0, 0);
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	color: $linkcolor;
+}
+
+h1, h2, a {
+	color: $textColor;
+}
+
+.container {
+	width: 960px;
+	@include margin(0, auto, 0, auto);
+}
+
+.intro {
+	@include margin(50px, 0, 0, 0);
+	text-align: center
+}
+
+.image {
+	border-radius: 50%;
+	display: inline-block;
+	width: 200px;
+}
+
+p {
+	color: $white;
+	font-size: 19px;
+}
+
+.skills, .job-section {
+	@include padding(30px, 15px, 30px, 15px);
+	width: 100%;
+}
+
+.skill {
+	width: 48%;
+	display: inline-block;
+}
+
+.skill-bar {
+	width: 400px;
+	height: 20px;
+	border: 1px solid $borderColor;
+	position: relative;
+}
+
+.skill-known {
+	width: 200px;
+	height: 20px;
+	background: $skillColor;
+}
+
+.skill-html, .skill-css {
+	width: 290px;
+}
+
+.skill-javascript {
+	width: 150px;
+}
+
+.skill-jQuery {
+	width: 200px;
+}
+
+.skill-bar span {
+	position: absolute;
+	right: 10px;
+	top: 0;
+	color: $white;
+}
+
+.jobList {
+	color: $white;
+}
+
+.jobList ul {
+	list-style: none;
+	@include padding(0, 0, 0, 0);
+	color: $jobListColor;
+}
+
+.jobList li {
+	line-height: 1.9;
+    font-size: 19px;
+}
+
+.job-title {
+	color: $jobTitle;
+}
+
+.loading-text {
+	color: $jobListColor;
+	font-size: 18px;
+}
+
+.intro,
+.skills,
+.job-section {
+	@include padding(40px, 0, 40px, 0);
+    border-bottom: 1px dashed $white;
+}
